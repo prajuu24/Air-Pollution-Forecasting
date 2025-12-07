@@ -1,69 +1,44 @@
-# Air Pollution Forecasting Using LSTM
-
-## Description
-This project implements an **LSTM (Long Short-Term Memory)** model to predict air pollution levels (PM2.5 concentration) for the next hour using current weather conditions and pollution data. The model has been trained using both:
-
-- **Uni-variate approach:** Using only one feature for prediction
-- **Multi-variate approach:** Using multiple features for prediction
-
----
+# Air-Pollution-Forecasting
+An LSTM model to predict the pollution levels in the next hour using the weather conditions and pollution levels in the current hour. I have trained the model using both uni-variate(if we consider only one feature) and multi-variate(when we consider multiple features for prediction).
 
 ## Dataset
-The project uses the **Air Quality dataset** collected at the US Embassy in Beijing, China, which reports hourly weather and pollution levels over five years. The dataset includes:
+In this, I have used the Air Quality dataset. This is a dataset that reports on the weather and the level of pollution each hour for five years at the US embassy in Beijing, China. The data includes the date-time, the pollution called PM2.5 concentration, and the weather information including dew point, temperature, pressure, wind direction, wind speed and the cumulative number of hours of snow and rain. 
 
-- Date-time
-- PM2.5 concentration (pollution level)
-- Weather parameters: Dew point, temperature, pressure, wind direction, wind speed
-- Cumulative hours of snow and rain
+## Steps followed
+- Data preparation
+- Data visualization
+- LSTM data preparation
+- Fit model along with regularization term
+- Evaluate model
 
----
+### Data preparation
+- Replace NA values
+- Parse date-time into pandas dataframe index
+- Specified clear names for each columns
 
-## Tech Stack
-- **Language:** Python  
-- **Libraries:** Pandas, NumPy, Matplotlib, Seaborn  
-- **Deep Learning Framework:** TensorFlow/Keras (for LSTM)
+### Data visualization
+- Used boxplot
+- Correlation matrix
 
----
+### LSTM data preparation
+- Normalized data
+- Transformed dataset into supervised learning problem
 
-## Project Steps
+### Model Fitting
+- Split data into train and test
+- Split into i/p and o/p
+- Reshape into 3D
+- Define 3 layer LSTM architecture with 50 neuron followed by 1 nueron LSTM
+- Add dropout at 20% after every layer
 
-### 1. Data Preparation
-- Replace missing (NA) values  
-- Parse date-time into pandas DataFrame index  
-- Specify clear column names  
+### Evaluate model
+- Make prediction
+- Invert scaling
+- Plot the line graph between actual vs predicted values
+- Calculate RMSE(root mean squared errot) and MAPE(mean absolute percentage error)
 
-### 2. Data Visualization
-- Create boxplots for feature distribution  
-- Plot correlation matrix to understand relationships  
-
-### 3. LSTM Data Preparation
-- Normalize data  
-- Transform dataset into a supervised learning problem (creating input-output pairs)  
-
-### 4. Model Fitting
-- Split data into training and testing sets  
-- Split into input (X) and output (y)  
-- Reshape data into 3D format for LSTM  
-- Define 3-layer LSTM architecture with 50 neurons per layer and 1-neuron output layer  
-- Add 20% dropout after each layer for regularization  
-
-### 5. Model Evaluation
-- Make predictions on test data  
-- Invert scaling to get original PM2.5 values  
-- Plot actual vs predicted PM2.5 values  
-- Calculate **RMSE (Root Mean Squared Error)** and **MAPE (Mean Absolute Percentage Error)**  
-
----
-
-## Results
-- Line graph showing predicted vs actual PM2.5 values  
-- Performance metrics: RMSE, MAPE  
-
----
-
-## Future Work
-
-- Include additional weather features or external pollution factors
-- Deploy the model for real-time air quality prediction
-- Compare with other time-series forecasting models like GRU, ARIMA, XGBoost
-
+### Results
+<div style="float:left">
+<div style="float:left"><img src="https://github.com/jyoti0225/Air-Pollution-Forecasting/blob/master/output_graph.png" />
+</div>
+<br />
