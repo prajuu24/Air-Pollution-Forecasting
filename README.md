@@ -61,18 +61,9 @@ The project uses the **Air Quality dataset** collected at the US Embassy in Beij
 
 ---
 
-Install required libraries:
+## Future Work
 
-pip install -r requirements.txt
-
-
-Run the Jupyter Notebook or Python script to train and evaluate the model
-
-Future Work
-
-Include additional weather features or external pollution factors
-
-Deploy the model for real-time air quality prediction
-
-Compare with other time-series forecasting models like GRU, ARIMA, XGBoost
+- Include additional weather features or external pollution factors
+- Deploy the model for real-time air quality prediction
+- Compare with other time-series forecasting models like GRU, ARIMA, XGBoost
 
