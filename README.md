@@ -61,8 +61,18 @@ The project uses the **Air Quality dataset** collected at the US Embassy in Beij
 
 ---
 
-## How to Run
-1. Clone the repository:  
-   ```bash
-   git clone <repository-url>
+Install required libraries:
+
+pip install -r requirements.txt
+
+
+Run the Jupyter Notebook or Python script to train and evaluate the model
+
+Future Work
+
+Include additional weather features or external pollution factors
+
+Deploy the model for real-time air quality prediction
+
+Compare with other time-series forecasting models like GRU, ARIMA, XGBoost
 
